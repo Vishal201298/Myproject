@@ -21,7 +21,7 @@ import com.db.dao.IssuesDAO;
 public class ListIssuesC extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	IssuesDAO employeeDao;
+	IssuesDAO issueDao;
        
     public  ListIssuesC() {
         super();
@@ -30,7 +30,7 @@ public class ListIssuesC extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		employeeDao = new  IssuesDAO();
+		issueDao = new  IssuesDAO();
 	}
 
 	/**
@@ -38,7 +38,7 @@ public class ListIssuesC extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-		List<Map<String, Object>> employeeList = employeeDao.getAllEmployee();
+		List<Map<String, Object>> employeeList = issueDao.getAllIssue();
 			
 			response.setContentType("text/html");
 			PrintWriter pw = response.getWriter();
